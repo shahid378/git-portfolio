@@ -1,0 +1,161 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+
+    .header-container {
+        width: 900px;
+        height: 150px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: none;
+            img {
+                width: 70px;
+                height: 70px;
+                margin-top: 20px;
+            }
+        }
+
+        .title-container {
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .search-container {
+        width: 900px;
+        display: flex;
+        background-color: hsl(0, 0%, 0%);
+        align-items: center;
+        flex-direction: column;
+
+        .input-container {
+            background-color: white;
+            input {
+                width: 500px;
+            }
+        }
+        .btn-container {
+            width: 200px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid black;
+
+            .btns {
+                .each-btn {
+                    background-color: white;
+                    color: blue;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .profile-info {
+        width: 900px;
+        background-color: lavenderblush;
+        display: flex;
+        flex-direction: column;
+
+        .profile-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+
+            img {
+                max-width: 200px;
+                max-height: 200px;
+            }
+        }
+
+        .profile-tag {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .profile {
+            display: flex;
+            flex-direction: column;
+
+            .user-details {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0 100px;
+                margin-bottom: 10px;
+
+                .tag {
+                    display: flex;
+                    justify-content: flex-start;
+                }
+
+                .tag-value {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    .repo-btn{
+                        cursor:pointer;
+                    }
+                }
+            }
+        }
+        .profile-repo {
+            display: flex;
+            flex-direction: column;
+
+            .repos-container {
+                display: flex;
+                flex-direction: column;
+
+                .project-container {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .repo-container{
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 100px;
+                    margin-bottom: 5px;
+                    border-bottom: 1px solid lightgray;
+                }
+            }
+        }
+        
+    }
+    .paginateButtons {
+        width: 80%;
+        height: 40px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    .paginateButtons a {
+        padding: 10px;
+        margin: 8px;
+        border-radius: 5px;
+        border: 1px solid blue;
+        color: blue;
+        cursor: pointer;
+    }
+    .paginateButtons a:hover {
+        color: white;
+        background-color: blue;
+    }
+    .paginationActive a {
+        color: white;
+        background-color: blue;
+    }
+}
+
