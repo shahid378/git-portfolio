@@ -19,8 +19,9 @@ const SearchBar = () => {
     }
 
     const clearInput = () => {
-        setUser("")
         setReadUserName("")
+        setUser("")
+        
     }
     return (
         <>
