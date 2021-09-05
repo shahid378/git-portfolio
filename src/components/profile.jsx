@@ -30,15 +30,9 @@ const Profile = (props) => {
                     })
         };
         getUsers()
-    }, [props.userid])
-
-    const [reposUrl, setReposUrl] = useState("")
-    const fetchRepos = () => {
-        setReposUrl(data.repos_url)
-    }
+    }, [props.userid])    
 
     if (props.userid.length > 0) {
-
         return (
             <div className="profile-info">
                 <div className="profile-img">
@@ -69,14 +63,15 @@ const Profile = (props) => {
                         <div className="tag-value">
                             <button
                                 className="repo-btn"
-                                onClick={fetchRepos}>
+                                onClick={() => {props.fetchRepos(data.repos_url); props.setDisplayRepo(true);}}
+                            >
                                 click here
                             </button>
                         </div>
                     </div>
                 </div>
                 <div className="profile-repo">
-                    <PublicRepos url={reposUrl} />
+                {props.displayRepo && <PublicRepos url={props.reposUrl} />}
                 </div>
             </div>
         )

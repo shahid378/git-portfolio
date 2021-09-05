@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from './profile';
-import { useState, } from 'react';
+import { useState, useEffect } from 'react';
 
 const SearchBar = () => {
     //updating the state of input
@@ -11,6 +11,13 @@ const SearchBar = () => {
     }
 
     //updating the username to be passed to api and then updating the state of input
+    
+    const [displayRepo, setDisplayRepo] = useState(false);
+    const [reposUrl, setReposUrl] = useState("")
+    const fetchRepos = (updateUrl) => {
+        setReposUrl(updateUrl)
+    }
+
     const [readUserName, setReadUserName] = useState("");
     
     const setInput = () => {
@@ -36,7 +43,7 @@ const SearchBar = () => {
                 <div className="btn-container">
                     <div className="btns">
                         <button className="each-btn"
-                            onClick={setInput }
+                            onClick={() => {setInput(); setDisplayRepo(false);} }
                         >
                             Search
                         </button>
@@ -49,7 +56,12 @@ const SearchBar = () => {
                     </div>
                 </div>
             </div>
-            <Profile userid={readUserName }/>
+            <Profile userid={readUserName}
+                fetchRepos={fetchRepos}
+                displayRepo={displayRepo}
+                setDisplayRepo={setDisplayRepo}
+                reposUrl={reposUrl}
+            />
         </>
     )
 }
